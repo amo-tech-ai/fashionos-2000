@@ -29,9 +29,9 @@ This document tracks the granular execution tasks required to build FashionOS 2.
 
 | Seq | Task ID | Description | File | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| 09 | **SITE** | Brand Constants, SEO Head, Core Pages (Home/About/Contact) | `docs/14-task-09-public-pages.md` | ⚪ Todo |
-| 10 | **DIR** | Service Templates, Talent Directory, Search Grid | `docs/15-task-10-services-directory.md` | ⚪ Todo |
-| 11 | **PERF** | Code Splitting, Lazy Images, Loading States | `docs/16-task-11-performance.md` | ⚪ Todo |
+| 09 | **SITE** | Brand Constants, SEO Head, Core Pages (Home/About/Contact) | `docs/14-task-09-public-pages.md` | 🟢 Done |
+| 10 | **DIR** | Service Templates, Talent Directory, Search Grid | `docs/15-task-10-services-directory.md` | 🟢 Done |
+| 11 | **PERF** | Code Splitting, Lazy Images, Loading States | `docs/16-task-11-performance.md` | 🟢 Done |
 
 ## 🛡️ Phase 4: Infrastructure & QA
 
@@ -45,7 +45,6 @@ This document tracks the granular execution tasks required to build FashionOS 2.
 
 ## 🚀 Next Actions
 
-1.  **Execute Task 09** to build the marketing shell.
-2.  **Execute Task 10** to build the directory and service pages.
-3.  **Execute Task 11** to optimize performance.
-4.  **Execute Task 14** (Health Dashboard) to verify system integrity before sign-off.
+1.  **Execute Task 12** (`docs/17-task-12-testing-cicd.md`) to set up testing.
+2.  **Execute Task 13** (`docs/18-task-13-security-docs.md`) to secure the app.
+3.  **Execute Task 14** (`docs/19-task-14-system-health.md`) to build the admin diagnostics.

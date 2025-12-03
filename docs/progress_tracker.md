@@ -31,7 +31,7 @@
 
 | Task | Status | Verification | Validation Proof |
 | :--- | :---: | :--- | :--- |
-| **Core Pages** | 🟢 | **Verified** | Home, About, Contact pages fully implemented with responsive layout. |
+| **Core Pages** | 🟢 | **Verified** | `src/pages/ContactPage.tsx` and `src/pages/AboutPage.tsx` fully implemented. |
 | **Directory** | 🟢 | **Verified** | `DirectoryPage.tsx` filters mock talent by role and location. |
 | **Services** | 🟢 | **Verified** | `ServicesPage.tsx` displays pricing tiers and links to booking. |
 | **Performance** | 🟢 | **Verified** | `React.lazy` implemented in router. `Image` component handles loading states. |
