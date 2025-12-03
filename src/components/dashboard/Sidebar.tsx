@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { 
@@ -12,7 +11,8 @@ import {
   Video,
   MapPin,
   Clock,
-  Shirt
+  Shirt,
+  PlusCircle
 } from 'lucide-react';
 
 export const Sidebar: React.FC = () => {
@@ -23,6 +23,7 @@ export const Sidebar: React.FC = () => {
   const eventId = isEventContext ? location.pathname.split('/events/')[1].split('/')[0] : null;
 
   const globalMenu = [
+    { icon: <PlusCircle size={18} />, label: 'New Booking', path: '/start-project' },
     { icon: <LayoutDashboard size={18} />, label: 'Overview', path: '/dashboard' },
     { icon: <FolderKanban size={18} />, label: 'Projects', path: '/dashboard/projects' },
     { icon: <CalendarDays size={18} />, label: 'Events', path: '/dashboard/events' },
@@ -59,7 +60,7 @@ export const Sidebar: React.FC = () => {
 
         <ul className="space-y-1">
           {(isEventContext ? eventMenu : globalMenu).map((item, i) => {
-            const isActive = location.pathname === item.path || (item.path !== '/dashboard' && location.pathname.startsWith(item.path));
+            const isActive = location.pathname === item.path || (item.path !== '/dashboard' && location.pathname.startsWith(item.path) && item.path !== '/start-project');
             return (
               <li key={i}>
                 <Link 

@@ -1,10 +1,15 @@
-
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export const OverviewPage: React.FC = () => {
   return (
     <div>
-      <h1 className="font-serif text-3xl mb-8">Dashboard Overview</h1>
+      <div className="flex justify-between items-center mb-8">
+        <h1 className="font-serif text-3xl">Dashboard Overview</h1>
+        <Link to="/start-project" className="bg-black text-white px-6 py-2 text-xs font-bold uppercase tracking-widest hover:bg-gray-800 transition-colors shadow-sm">
+          New Booking
+        </Link>
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
          <div className="bg-white p-6 rounded-sm shadow-sm border border-gray-100">
             <span className="text-xs font-bold uppercase tracking-widest text-gray-400">Active Projects</span>
