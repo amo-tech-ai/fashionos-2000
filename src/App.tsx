@@ -1,3 +1,4 @@
+
 import React, { Suspense, lazy } from 'react';
 import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
@@ -25,6 +26,7 @@ const DashboardLayout = lazy(() => import('./layouts/DashboardLayout').then(modu
 const OverviewPage = lazy(() => import('./pages/dashboard/OverviewPage').then(module => ({ default: module.OverviewPage })));
 const SponsorsPage = lazy(() => import('./pages/dashboard/SponsorsPage').then(module => ({ default: module.SponsorsPage })));
 const EventDetailPage = lazy(() => import('./pages/dashboard/EventDetailPage').then(module => ({ default: module.EventDetailPage })));
+const SettingsPage = lazy(() => import('./pages/dashboard/SettingsPage').then(module => ({ default: module.SettingsPage })));
 
 // Wrapper for Public Site Layout (Navbar + Footer)
 const PublicLayout: React.FC<{children: React.ReactNode}> = ({ children }) => (
@@ -60,13 +62,18 @@ const App: React.FC = () => {
               {/* Dashboard Routes (Protected) */}
               <Route path="/dashboard" element={<DashboardLayout />}>
                 <Route index element={<OverviewPage />} />
-                <Route path="sponsors" element={<SponsorsPage />} />
-                <Route path="events" element={<OverviewPage />} /> {/* Placeholder */}
-                <Route path="events/:id" element={<EventDetailPage />} />
-                <Route path="events/:id/timeline" element={<EventDetailPage />} /> {/* Reusing for demo */}
-                <Route path="events/:id/logistics" element={<EventDetailPage />} />
-                <Route path="finance" element={<OverviewPage />} />
                 <Route path="projects" element={<OverviewPage />} />
+                <Route path="finance" element={<OverviewPage />} />
+                <Route path="sponsors" element={<SponsorsPage />} />
+                <Route path="settings" element={<SettingsPage />} />
+                
+                {/* Event Context Routes */}
+                <Route path="events" element={<OverviewPage />} /> 
+                <Route path="events/:id" element={<EventDetailPage />} />
+                <Route path="events/:id/timeline" element={<EventDetailPage />} />
+                <Route path="events/:id/logistics" element={<EventDetailPage />} />
+                <Route path="events/:id/casting" element={<EventDetailPage />} /> {/* Placeholder */}
+                <Route path="events/:id/sponsors" element={<SponsorsPage />} /> {/* Reuse Sponsor CRM */}
               </Route>
 
               {/* Fallback */}
